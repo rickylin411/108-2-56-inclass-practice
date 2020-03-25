@@ -1,0 +1,28 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1584510536603.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4248348521",
+    "id" : "FA9980F8",
+    "lastKnownWriteTime" : 1585114883,
+    "last_content_update" : 1585114883931,
+    "path" : "~/GitHub/108-2-56-inclass-practice/lichen.Rmd",
+    "project_path" : "lichen.Rmd",
+    "properties" : {
+        "cursorPosition" : "48,7",
+        "docOutlineVisible" : "0",
+        "last_setup_crc32" : "",
+        "scrollLine" : "38",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
