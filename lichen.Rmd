@@ -153,3 +153,11 @@ with_tz(pgTime, tzone="Europe/Paris")
 ymd_hms(tpeTime, tz="Asia/Taipei")
 with_tz(tpeTime, tzone="Asia/Taipei")
 ```
+
+```{r}
+class(tpeTime)
+typeof(tpeTime)
+
+as.numeric(tpeTime)
+as.numeric(pgTime)
+```
