@@ -163,5 +163,10 @@ as.numeric(pgTime)
 ```
 
 ```{r}
-studentTime <- c( "14:30:25")
+studentTime <- c(
+ymd_hms("2020-03-04T06:56:29Z"),
+ymd_hms("2020-03-11 14:16:43", tz="Asia/Taipei"),
+ ymd_hms("2020-03-11 14:34:33",tz="Asia/Taipei")
+)
+studentTime
 ```
