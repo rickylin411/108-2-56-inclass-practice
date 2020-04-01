@@ -161,3 +161,7 @@ typeof(tpeTime)
 as.numeric(tpeTime)
 as.numeric(pgTime)
 ```
+
+```{r}
+studentTime <- c( "14:30:25")
+```
