@@ -126,3 +126,30 @@ majors10_factor <- factor(
 typeof(majors10_factor)
 class(majors10_factor)
 ```
+
+```{r}
+library(lubridate)
+tpeTime <- ymd_hms("2020-03-18 13:52:40",
+        tz="Asia/Taipei")
+```
+
+```{r}
+pgTime <- mdy_hms("Mar.18, 2020, 05:52:40",
+                  tz="Europe/Lisbon")
+```
+
+```{r}
+with_tz(tpeTime, tzone="UTC")
+with_tz(pgTime, tzone="UTC")
+```
+
+```{r}
+with_tz(tpeTime, tzone="Europe/Paris")
+with_tz(pgTime, tzone="Europe/Paris")
+```
+
+
+```{r}
+ymd_hms(tpeTime, tz="Asia/Taipei")
+with_tz(tpeTime, tzone="Asia/Taipei")
+```
