@@ -268,3 +268,29 @@ print(commit)
 library(jsonlite) 
 toJSON(commit)
 ```
+
+```{r}
+weather_forecast <- list(
+  city="台北市",
+  date=list(
+    today=ymd("2020-03-31"),
+    tomorrow=ymd("2020-04-01")),
+  MaxT=25,
+  MinT=18,
+  city="新北市",
+  date=list(
+    today=ymd("2020-03-31"),
+    tomorrow=ymd("2020-04-01")),
+  
+  MaxT=24,
+  MinT=15
+)
+print(weather_forecast)
+```
+
+```{r}
+save("小明108學年課表C",file = "myDATA.Rda")
+```
+```{r}
+load("myDATA.Rda")
+```
