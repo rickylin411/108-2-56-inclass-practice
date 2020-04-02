@@ -166,7 +166,52 @@ as.numeric(pgTime)
 studentTime <- c(
 ymd_hms("2020-03-04T06:56:29Z"),
 ymd_hms("2020-03-11 14:16:43", tz="Asia/Taipei"),
- ymd_hms("2020-03-11 14:34:33",tz="Asia/Taipei")
+ymd_hms("2020-03-11 14:34:33",tz="Asia/Taipei")
 )
 studentTime
+```
+
+## List
+
+```{r}
+vectorExample <- c(2,6,7)
+listExample <- list(2,6,7)
+
+print(vectorExample)
+print(listExample)
+```
+
+```{r}
+library(lubridate)
+`小明交易1` <- list(
+  ymd_hms("2020-03-31T13:40:55Z"), # Date/Time class
+  "一芳", # character
+  2, # numeric
+  "水果茶" # character
+)
+print(`小明交易1`)
+```
+
+```{r}
+# 用vector或list
+c(
+  c("108-1","高級會計學","高等統計學"),
+  c("108-2","食在拉丁美洲")
+)
+```
+```{r}
+# list含兩個vectors
+`小明108學年課表A` <- list(
+  c("108-1","高級會計學","高等統計學"),
+  c("108-2","食在拉丁美洲")
+)
+print(`小明108學年課表A`)
+```
+```{r}
+# list含兩個lists
+`小明108學年課表B` <- list(
+  list("108-1","高級會計學","高等統計學"),
+  list("108-2","食在拉丁美洲")
+)
+print(`小明108學年課表B`)
 ```
