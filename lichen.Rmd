@@ -371,7 +371,37 @@ vectorExample[c(3,2,1)] # 產生重新排列效果
 ```
 ```{r}
 # 顯示到第一層
-str(listExample, max.level=1)
+str(listExample, max.level = 1)
 
 listExample[c(1,2)]
+```
+```{r}
+str(tainanSportsMap[c(1, 56, 790)], max.level = 1)
+```
+```{r}
+# 顯示到第一層
+str(listExample, max.level=1)
+
+listExample[c("學期")]
+listExample[c("student","學期")]
+```
+```{r}
+fromJSON("https://www.dropbox.com/s/qnm9bnz7vccrvcz/taipeiNightMarkets.json?dl=1", simplifyDataFrame = F) -> taipeiNightMarkets
+```
+```{r}
+str(taipeiNightMarkets[c(53, 4, 2)], max.level = 1)
+```
+```{r}
+vectorExample
+vectorExample[c(T,T,F)] # 要，要，不要
+```
+```{r}
+str(listExample[c(F,T)]) # 不要，要
+str(listExample[c(T,T)]) # 要，要
+```
+```{r}
+names(taipeiNightMarkets)
+```
+```{r}
+str(taipeiNightMarkets[c(T, F, F, F, T, F, F, F, F, T, F, F, F, T)], max.level = 1)
 ```
