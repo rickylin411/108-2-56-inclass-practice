@@ -454,3 +454,88 @@ get2_layer2 <- get2_layer1[["108-1"]]
 get2_layer3 <- get2_layer2[[1]]
 get2_layer3$teacher
 ```
+
+```{r}
+today <- list(
+  list("台北市",c(highest_temp = 25),c(lowest_temp = 18)),
+  list("新北市",c(highest_temp = 24),c(lowest_temp = 15)))
+tomorrow <- list(
+  list("台北市",c(highest_temp = 25),c(lowest_temp = 18)),
+  list("新北市",c(highest_temp = 24),c(lowest_temp = 15)))
+
+weather <- list(today,tomorrow)
+
+print(weather)
+```
+```{r}
+weather[[1]][[2]][[2]] # 今天/新北市/highest_temp
+weather[[2]][[2]][[2]] # 明天/新北市/highest_temp
+```
+
+```{r}
+a <- c("1","b","TRUE")
+a
+a[[2]] <- "c" # 元素存在: 替換
+a[[4]] <- "7" # 元素不存在： 增加
+a[c(5,6)] <- c("J", "K")
+a
+a[[7]] <- "Johnson"
+a <- c(a, c("Mary"))
+a
+```
+```{r}
+library(lubridate)
+list1 <- 
+  list(
+    list(
+      name="Jack",
+      birthday=ymd("1998-03-21"),
+      status=c(height=177, weight=80)
+    )
+  )
+
+str(list1)
+```
+```{r}
+# 更改日期
+list1[[1]]$birthday <- ymd("1997-03-21")
+
+# 新增資料
+list1[[2]] <- list(
+  name="Mary",
+  birthday=ymd("1998-08-24")
+)
+
+str(list1)
+```
+```{R}
+list1[[2]]$status <- c(height=163, weight=45)
+list1[[1]]$status[["height"]] <- 176
+str(list1)
+```
+
+```{r}
+list1[[1]][["age"]] <- 21
+list1[[2]]["age"] <- list(21)
+
+# 改變「一個」時，使用[[ ]]比較不會錯。
+str(list1)
+```
+```{r}
+list1[[1]][c("bloodType","registered")] <- list("AB",TRUE)
+
+str(list1)
+```
+```{r}
+print(a)
+a[-c(1,3)]
+a[c(-2)]
+
+print(a)
+a[-c(1,3)] -> a # 要回存才算真的刪除
+```
+```{r}
+str(list1)
+list1[[2]][c(1,2)] <- NULL
+str(list1)
+```
