@@ -610,3 +610,41 @@ source("https://www.dropbox.com/s/qsrw069n94k61lj/transcript100to103_list.R?dl=1
 
 str(transcript100to103)
 ```
+```{r}
+# 只要成績大於85的
+pick_above85 <-
+  transcript100to103$`成績` > 85
+# 各學屆2年級人數
+table(transcript100to103$`學屆`)
+# 各學屆2年級成績大於85人數
+table(transcript100to103$`學屆`[pick_above85])
+```
+```{r}
+example$birthday
+class(example$birthday)
+typeof(example$birthday)
+```
+```{r}
+print(example[c("name","birthday")])
+
+pick_after98 <- example$birthday >= lubridate::ymd("1998-01-01")
+example$name[pick_after98]
+```
+```{r}
+source("https://www.dropbox.com/s/16h6ggua6qtydci/exchangeRate.R?dl=1")
+
+str(exchangeRate)
+```
+```{r}
+# 只要1998年1月（含）以後的
+library(lubridate)
+pick_after98_01 <-
+  exchangeRate$`期間`>= ymd("1998-01-01")
+
+exchangeRate_after98 <-
+  list(
+    `期間`=exchangeRate$`期間`[pick_after98_01],
+    `幣別`=exchangeRate$`幣別`[pick_after98_01],
+    `匯率`=exchangeRate$`匯率`[pick_after98_01]
+  )
+```
