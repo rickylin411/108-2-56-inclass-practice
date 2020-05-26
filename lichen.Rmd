@@ -1051,3 +1051,60 @@ map(dance[[4]]$showInfo, ~ .x$time) ->
 list_showTimes_dance4
 ```
 ```{r}
+threeHeigths <- c(Gary=178, John=182, Cam=175)
+```
+```{r}
+# 先排序由大到小，
+sort(threeHeigths, decreasing=T) -> sorted_heights
+
+# 把排好的人名取出
+names(sorted_heights) -> sorted_persons
+
+# 接著取出第一個位置的人名
+sorted_persons[[1]] -> highestPerson
+
+
+names(sort(threeHeigths, decreasing = T))[[1]] -> highestPerson
+```
+```{r}
+library(magrittr)
+
+sort(threeHeigths, decreasing=T) %>% 
+names(.) %>%
+.[[1]] -> highestPerson
+```
+```{r}
+f(w) -> x
+g(x) -> y
+h(y) -> z
+#相同寫法
+f(w) %>%
+  g(.) %>% 
+  h(.) -> z
+#再簡化
+w %>%
+  f(.) %>%
+  g(.) %>%
+  h(.) -> z
+```
+```{r}
+# 由cities創出每個元素對應的北部、東部、中部region factor
+cities <- factor(c("台北","花蓮","台東","台中"))
+levels(cities)
+
+region <- cities
+
+# 以下為一連串的pipe operation
+library(stringr)
+levels(region) -> currentLevels
+str_replace (currentLevels,"台北","北部") -> currentLevels1
+str_replace (currentLevels1,"花蓮|台東","東部") -> currentLevels2
+str_replace(currentLevels2,"台中","中部") -> regionLevels
+regionLevels -> levels(region)
+#相同寫法
+levels(region) %>% 
+  str_replace(.,"台北","北部") %>%
+  str_replace(.,"花蓮|台東","東部") %>%
+  str_replace(.,"台中","中部") ->
+  levels(region)
+```
